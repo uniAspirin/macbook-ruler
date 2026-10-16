@@ -1,0 +1,30 @@
+{
+  "macbook-pro-14-default": {
+    "label": "MacBook Pro 14.2",
+    "screen": {
+      "physical": {
+        "width": 3024,
+        "height": 1964
+      },
+      "logical": {
+        "width": 1512,
+        "height": 982
+      },
+      "diagonalInches": 14.2
+    }
+  },
+  "dell-2725qs": {
+    "label": "Dell 2725QS",
+    "screen": {
+      "physical": {
+        "width": 3840,
+        "height": 2160
+      },
+      "logical": {
+        "width": 2560,
+        "height": 1440
+      },
+      "diagonalInches": 27
+    }
+  }
+}

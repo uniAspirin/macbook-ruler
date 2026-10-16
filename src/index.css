@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Roboto Mono", monospace;
+}
+
+.ruler {
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  overflow: hidden;
+  background-repeat: no-repeat;
+}
+
+.ruler-horizontal {
+  width: 100vw;
+  height: 80px;
+  background-position: left bottom;
+  background-image:
+    /* 1cm */
+    repeating-linear-gradient(to right, #333 0px 2px, transparent 2px var(--cm)),
+    /* 0.5cm */
+    repeating-linear-gradient(to right, #333 0px 2px, transparent 2px var(--half-cm)),
+    /* 1mm */
+    repeating-linear-gradient(to right, #333 0px 2px, transparent 2px var(--mm));
+  background-size:
+    100% 40px,
+    100% 20px,
+    100% 10px;
+}
+
+.ruler-vertical {
+  background-position: left bottom;
+  height: 100vh;
+  width: 80px;
+  background-image:
+    repeating-linear-gradient(to top, #333 0px 2px, transparent 2px var(--cm)),
+    repeating-linear-gradient(to top, #333 0px 2px, transparent 2px var(--half-cm)),
+    repeating-linear-gradient(to top, #333 0px 2px, transparent 2px var(--mm));
+  background-size:
+    40px 100%,
+    20px 100%,
+    10px 100%;
+}
+
+.ruler-number {
+  position: absolute;
+}
+
+.ruler-horizontal .ruler-number {
+  bottom: 40px;
+  transform: translateX(-50%);
+}
+.ruler-vertical .ruler-number {
+  left: 45px;
+  transform: translateY(50%);
+}
+
+
+.measurement-line {
+  position: fixed;
+  background: #2563eb;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.measurement-horizontal {
+  height: 2px;
+  transform: translateY(-50%);
+}
+
+.measurement-vertical {
+  width: 2px;
+  transform: translateX(-50%);
+}
+
+.measurement-label {
+  position: fixed;
+  z-index: 21;
+  pointer-events: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #fff;
+  color: #2563eb;
+  font-size: 14px;
+  max-width: calc(100vw - 24px);
+  overflow-wrap: anywhere;
+}
